@@ -15,58 +15,59 @@ namespace PokemonReviewApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CategoryController : Controller
+    public class CountryController : Controller
     {
-        private readonly ICategoryRepository _categoryRepository;
+        private readonly ICountryRepository _countryRepository;
         private readonly IMapper _mapper;
-        //private readonly IMapper _mapper;
-        public CategoryController(ICategoryRepository categoryRepository, IMapper mapper)
+
+        public CountryController(ICountryRepository countryRepository, IMapper mapper)
         {
-            _categoryRepository = categoryRepository;
+            _countryRepository = countryRepository;
             _mapper = mapper;
         }
         // GET: api/values
         [HttpGet]
-        [ProducesResponseType(200, Type = typeof(IEnumerable<Category>))]
-        public IActionResult GetCategories()
+        [ProducesResponseType(200, Type = typeof(IEnumerable<Country>))]
+        public IActionResult GetCountries()
         {
-            var categories = _mapper.Map<List<CategoryDto>>(_categoryRepository.GetCategories());
+            var countries = _mapper.Map<List<CountryDto>>(_countryRepository.GetCountries());
 
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            return Ok(categories);
+            return Ok(countries);
         }
 
         // GET api/values/5
-        [HttpGet("{categoryId}")]
-        [ProducesResponseType(200, Type = typeof(Category))]
+        [HttpGet("{countryId}")]
+        [ProducesResponseType(200, Type = typeof(Country))]
         [ProducesResponseType(400)]
-        public IActionResult GetCategory(int categoryId)
+        public IActionResult GetCountry(int countryId)
         {
-            if (!_categoryRepository.CategoryExists(categoryId))
+            if (!_countryRepository.CountryExists(countryId))
                 return NotFound();
 
-            var cateogory = _mapper.Map<CategoryDto>(_categoryRepository.GetCategory(categoryId));
+            var country = _mapper.Map<CountryDto>(_countryRepository.GetCountry(countryId));
 
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            return Ok(cateogory);
+            return Ok(country);
         }
 
-        [HttpGet("pokemon/{categoryId}")]
-        [ProducesResponseType(200, Type = typeof(IEnumerable<Category>))]
+        [HttpGet("owners/{ownerId}")]
+        [ProducesResponseType(200, Type = typeof(Country))]
         [ProducesResponseType(400)]
-        public IActionResult GetPokemonByCategoryId(int categoryId)
+        public IActionResult GetCountryOfAnOwner(int ownerId)
         {
-            var pokemons = _mapper.Map<List<PokemonDto>>(
-                _categoryRepository.GetPokemonByCategory(categoryId));
+            var country = _mapper.Map<CountryDto>(
+                _countryRepository.GetCountryByOwner(ownerId));
 
             if (!ModelState.IsValid)
                 return BadRequest();
 
-            return Ok(pokemons);
+            return Ok(country);
         }
+
 
         // POST api/values
         //[HttpPost]
