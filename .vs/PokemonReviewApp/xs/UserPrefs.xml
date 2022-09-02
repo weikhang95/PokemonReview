@@ -1,4 +1,4 @@
-﻿<Properties StartupConfiguration="{E311CFFD-4C48-4A6B-A0D3-61D6223D5206}|Default">
+﻿<Properties StartupConfiguration="{E311CFFD-4C48-4A6B-A0D3-61D6223D5206}|Default" GitUserInfo="UsingMD">
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.PokemonReviewApp FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.PokemonReviewApp PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>
