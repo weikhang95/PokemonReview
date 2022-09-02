@@ -33,5 +33,3 @@
 /Users/weikhang95/Projects/PokemonReviewApp/PokemonReviewApp/bin/Debug/net6.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
 /Users/weikhang95/Projects/PokemonReviewApp/PokemonReviewApp/bin/Debug/net6.0/Humanizer.dll
 /Users/weikhang95/Projects/PokemonReviewApp/PokemonReviewApp/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Design.dll
-/Users/weikhang95/Projects/PokemonReviewApp/PokemonReviewApp/bin/Debug/net6.0/AutoMapper.dll
-/Users/weikhang95/Projects/PokemonReviewApp/PokemonReviewApp/bin/Debug/net6.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
